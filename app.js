@@ -77,10 +77,12 @@ wss.on("connection", function connection(ws) {
         } else {
             if (oMsg.type == messages.T_CODE_GUESS) {
                 game.setGuess(oMsg.data);
+                game.mastermind.send(message)
             }
 
             if (oMsg.type == messages.T_GAME_WON_BY) {
                 game.setState(oMsg.data);
+                game.mastermind.send(message)
                 gameStats.gamesPlayed++;
             }
         }

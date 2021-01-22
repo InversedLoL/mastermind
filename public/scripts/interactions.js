@@ -34,9 +34,27 @@ class GameState {
         this.incrWrongGuesses = () => {
             this.wrongGuesses++;
 
+            const parent = document.querySelector(".current .code");
+            for (let i in this.guess) {
+                let replacement = document.createElement("span");
+                replacement.classList.add("circle", this.guess[i]);
+                parent.replaceChild(replacement, currentGuessCircles[i]);
+            }
+
             const newCurrent = current.previousElementSibling;
-            newCurrent.classList.remove("current");
+            current.classList.remove("current");
             newCurrent.classList.add("current");
+            current = newCurrent;
+            currentGuessCircles = document.querySelectorAll(".current .code .circle");
+            currentFeedbackCricles = document.querySelectorAll(".current .feedback .circle");
+
+            currentGuessCircles.forEach((circle) => {
+                circle.addEventListener("click", () => {
+                    if (currentColor.classList.length > 1) {
+                        circle.className = currentColor.className;
+                    }
+                });
+            });
         };
 
         this.whoWon = () => {
@@ -58,6 +76,7 @@ class GameState {
         };
 
         this.updateGame = (g) => {
+            this.guess = g;
             let bulls = 0;
             let cows = 0;
 
@@ -87,9 +106,11 @@ class GameState {
                 this.revealCode();
             }
 
-            let message = Messages.O_CODE_GUESS;
-            message.data = g;
-            socket.send(JSON.stringify(message));
+            if (this.playerType == "CODEBREAKER") {
+                let message = Messages.O_CODE_GUESS;
+                message.data = g;
+                socket.send(JSON.stringify(message));
+            }
 
             let winner = this.whoWon();
 
@@ -114,10 +135,6 @@ class GameState {
             }
         }
     }
-}
-
-function initialize(gameState) {
-
 }
 
 // Setup

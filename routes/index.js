@@ -6,8 +6,7 @@ const gameStats = require("../statistics");
 // Home page
 router.get("/splash", function (req, res) {
     res.render("splash.ejs", {
-        gamesPlayed: gameStats.gamesPlayed,
-        wins: gameStats.wins
+        gamesPlayed: gameStats.gamesPlayed
     });
 });
 
@@ -19,8 +18,7 @@ router.get("/play", function (req, res) {
 // Home page shorthand
 router.get("/", function (req, res) {
     res.render("splash.ejs", {
-        gamesPlayed: gameStats.gamesPlayed,
-        wins: gameStats.wins
+        gamesPlayed: gameStats.gamesPlayed
     });
 });
 
