@@ -161,7 +161,7 @@ nav a {
 
 /* Color spawners */
 
-#spawners {
+#picker {
     /* Structure */
     height: 70px;
     display: flex;
@@ -170,9 +170,32 @@ nav a {
     justify-content: center;
 }
 
+#picker .separator {
+    /* Structure */
+    height: 74px;
+}
+
+#spawners {
+    /* Structure */
+    width: 480px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#chosen-color {
+    /* Structure */
+    height: 100%;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Circles */
 
-#codemaker .circle, #spawners .circle {
+#codemaker .circle, #picker .circle {
     /* Structure */
     height: 30px;
     width: 30px;
@@ -185,7 +208,7 @@ nav a {
     margin: 5px;
     display: inline-block;
     /* View */
-    background-color: var(--color-background);
+    background-color: var(--color-black);
     border: 2px solid var(--color-foreground);
     border-radius: 50%;
 }
@@ -218,4 +241,14 @@ nav a {
 .aqua {
     /* View */
     background-color: var(--color-aqua);
+}
+
+.bull {
+    /* View */
+    background-color: var(--color-dark);
+}
+
+.cow {
+    /* View */
+    background-color: var(--color-light);
 }

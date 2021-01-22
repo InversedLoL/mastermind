@@ -6,6 +6,8 @@
 
     <link rel="icon" href="images/logo.png" type="image/png">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/page.css">
 </head>
@@ -17,7 +19,7 @@
     </header>
     <main>
         <nav>
-            <a href="game-screen.html">Play</a>
+            <a href="/play">Play</a>
             <a href="https://en.wikipedia.org/wiki/Mastermind_(board_game)" target="_blank">Rules</a>
             <a href="https://github.com/InversedLoL/mastermind" target="_blank">Source</a>
         </nav>
@@ -28,15 +30,14 @@
         </section>
         <section id="statistics">
             <ul>
-                <li><span id="winsGuest"></span> codes broken</li>
-                <li><span id="winsHost"></span> masterminds</li>
-                <li><span id="currentGames"></span> current games</li>
-                <li><span id="playersInQueue"></span> players in queue</li>
-            </ul>
+                <li>
+                    <%= gamesPlayed %> game(s) played
+                </li>
+                <li>
+                    <%= wins %> win(s)
+                </li>
         </section>
     </footer>
-
-    <!-- <script src="scripts/game.js" defer></script> -->
 </body>
 
 </html>

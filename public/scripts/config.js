@@ -1,0 +1,3 @@
+((exports) => {
+    exports.WEB_SOCKET_URL = "ws://localhost:4000";
+})(typeof exports === "undefined" ? (this.Setup = {}) : exports);

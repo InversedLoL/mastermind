@@ -6,6 +6,8 @@
 
     <link rel="icon" href="images/logo.png" type="image/png">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/page.css">
     <link rel="stylesheet" href="styles/game.css">
@@ -19,8 +21,9 @@
     <main>
         <nav>
             <a href="#" id="guessBtn">Guess</a>
+            <a href="#" id="clearBtn">Clear</a>
             <a href="https://en.wikipedia.org/wiki/Mastermind_(board_game)" target="_blank">Rules</a>
-            <a href="index.html">Quit</a>
+            <a href="/splash" id="abortBtn">Quit</a>
         </nav>
         <section id="game-area">
             <div id="play-area">
@@ -44,7 +47,7 @@
                         <span class="circle"></span>
                         <span class="circle"></span>
                     </div>
-                    <div class="separator"></div>
+                    <span class="separator"></span>
                     <div class="feedback">
                         <span class="circle"></span>
                         <span class="circle"></span>
@@ -63,7 +66,7 @@
                         <span class="circle"></span>
                         <span class="circle"></span>
                     </div>
-                    <div class="separator"></div>
+                    <span class="separator"></span>
                     <div class="feedback">
                         <span class="circle"></span>
                         <span class="circle"></span>
@@ -82,7 +85,7 @@
                         <span class="circle"></span>
                         <span class="circle"></span>
                     </div>
-                    <div class="separator"></div>
+                    <span class="separator"></span>
                     <div class="feedback">
                         <span class="circle"></span>
                         <span class="circle"></span>
@@ -101,7 +104,7 @@
                         <span class="circle"></span>
                         <span class="circle"></span>
                     </div>
-                    <div class="separator"></div>
+                    <span class="separator"></span>
                     <div class="feedback">
                         <span class="circle"></span>
                         <span class="circle"></span>
@@ -120,7 +123,7 @@
                         <span class="circle"></span>
                         <span class="circle"></span>
                     </div>
-                    <div class="separator"></div>
+                    <span class="separator"></span>
                     <div class="feedback">
                         <span class="circle"></span>
                         <span class="circle"></span>
@@ -139,7 +142,7 @@
                         <span class="circle"></span>
                         <span class="circle"></span>
                     </div>
-                    <div class="separator"></div>
+                    <span class="separator"></span>
                     <div class="feedback">
                         <span class="circle"></span>
                         <span class="circle"></span>
@@ -158,7 +161,7 @@
                         <span class="circle"></span>
                         <span class="circle"></span>
                     </div>
-                    <div class="separator"></div>
+                    <span class="separator"></span>
                     <div class="feedback">
                         <span class="circle"></span>
                         <span class="circle"></span>
@@ -177,7 +180,7 @@
                         <span class="circle"></span>
                         <span class="circle"></span>
                     </div>
-                    <div class="separator"></div>
+                    <span class="separator"></span>
                     <div class="feedback">
                         <span class="circle"></span>
                         <span class="circle"></span>
@@ -196,7 +199,7 @@
                         <span class="circle"></span>
                         <span class="circle"></span>
                     </div>
-                    <div class="separator"></div>
+                    <span class="separator"></span>
                     <div class="feedback">
                         <span class="circle"></span>
                         <span class="circle"></span>
@@ -215,7 +218,7 @@
                         <span class="circle"></span>
                         <span class="circle"></span>
                     </div>
-                    <div class="separator"></div>
+                    <span class="separator"></span>
                     <div class="feedback">
                         <span class="circle"></span>
                         <span class="circle"></span>
@@ -226,13 +229,19 @@
                     </div>
                 </div>
             </div>
-            <div id="spawners">
-                <span id="red" class="circle red"></span>
-                <span id="green" class="circle green"></span>
-                <span id="yellow" class="circle yellow"></span>
-                <span id="blue" class="circle blue"></span>
-                <span id="purple" class="circle purple"></span>
-                <span id="aqua" class="circle aqua"></span>
+            <div id="picker">
+                <div id="spawners">
+                    <span id="red" class="circle red"></span>
+                    <span id="green" class="circle green"></span>
+                    <span id="yellow" class="circle yellow"></span>
+                    <span id="blue" class="circle blue"></span>
+                    <span id="purple" class="circle purple"></span>
+                    <span id="aqua" class="circle aqua"></span>
+                </div>
+                <span class="separator"></span>
+                <div id="chosen-color">
+                    <span class="circle"></span>
+                </div>
             </div>
         </section>
     </main>
@@ -240,17 +249,11 @@
         <section id="credits">
             <p>&copy; 2021 CSE3 20, Delft</p>
         </section>
-        <section id="statistics">
-            <ul>
-                <li><span id="winsGuest"></span> codes broken</li>
-                <li><span id="winsHost"></span> masterminds</li>
-                <li><span id="currentGames"></span> current games</li>
-                <li><span id="playersInQueue"></span> players in queue</li>
-            </ul>
-        </section>
     </footer>
 
-    <script src="scripts/game.js" defer></script>
+    <script src="scripts/config.js" defer></script>
+    <script src="scripts/messages.js" defer></script>
+    <script src="scripts/interactions.js" defer></script>
 </body>
 
 </html>
